@@ -1,18 +1,71 @@
 const input = require('sync-input');
 
-console.log("Hello! My name is Aid.");
-console.log("I was created in 2020.");
-console.log("Please, remind me your name.");
 
-let name = input();
+function greet(bot_name, birth_year) {
+	console.log("Hello! My name is " + bot_name + ".");
+	console.log("I was created in " + birth_year + ".");
+}
 
-console.log("What a great name you have, " + name + "!");
-console.log("Let me guess your age.");
-console.log("Enter remainders of dividing your age by 3, 5 and 7.");
+function remind_name() {
+	console.log("Please, remind me your name.");
+	let name = input();
+	console.log("What a great name you have, " + name + "!");
+}
 
-let remainder3 = input();
-let remainder5 = input();
-let remainder7 = input();
-age = (remainder3 * 70 + remainder5 * 21 + remainder7 * 15) % 105
+function guess_age() {
+	console.log("Let me guess your age.");
+	console.log("Enter remainders of dividing your age by 3, 5 and 7.");
 
-console.log("Your age is " + age + "; that's a good time to start programming!");
+	let rem3 = Number(input());
+	let rem5 = Number(input());
+	let rem7 = Number(input());
+
+	let age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105;
+
+	console.log("Your age is " + age + "; that's a good time to start programming!");
+}
+
+function count() {
+	console.log("Now I will prove to you that I can count to any number you want.");
+
+	let number = Number(input());
+	let current = 0;
+
+	while (current <= number) {
+		console.log(current + " !");
+		current += 1;
+	}
+}
+
+function test() {
+	console.log("Let's test your programming knowledge.");
+
+	const question = "Why do we use methods?";
+	const variants = ["To repeat a statement multiple times.",
+	"To decompose a program into several small subroutines.",
+	"To determine the execution time of a program.",
+	"To interrupt the execution of a program."];
+	const correctAnswer = 2;
+
+	console.log(question);
+	for (let i = 0; i < variants.length; i++) {
+		console.log((i + 1) + ". " + variants[i]);
+	}
+	let userAnswer = Number(input());
+	while (userAnswer !== correctAnswer) {
+		console.log("Please, try again.");
+		userAnswer = Number(input());
+	}
+}
+
+function end() {
+	console.log("Congratulations, have a nice day!")
+}
+
+
+greet('Aid', '2020')  // change it as you need
+remind_name();
+guess_age();
+count();
+test()
+end();
