@@ -5,7 +5,12 @@ textarea {
 }
 
 button {
-    width: 10%;
-    height: 5vh;
-    background: rgba(255, 38, 0, 0.64);
+    margin: 1rem;
+    background-color: #FFA07A;
+    color: #514c4c;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: large;
+    text-transform: capitalize;
 }
