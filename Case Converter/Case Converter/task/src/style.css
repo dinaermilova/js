@@ -1,0 +1,11 @@
+textarea {
+    width: 80vw;
+    height: 50vh;
+    resize: none;
+}
+
+button {
+    width: 10%;
+    height: 5vh;
+    background: rgba(255, 38, 0, 0.64);
+}
