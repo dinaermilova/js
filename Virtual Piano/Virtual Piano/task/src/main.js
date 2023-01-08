@@ -1,5 +1,4 @@
 document.addEventListener("keydown", function(event) {
-    // console.log("The '" + event.key + "' key is pressed.");
     let key = event.key.toUpperCase();
     switch (key) {
         case 'A':
@@ -22,6 +21,19 @@ document.addEventListener("keydown", function(event) {
             break;
     }
 
+});
 
-
+let whiteKeys = ['A', 'S', 'D', 'F', 'G', 'H', 'J'];
+whiteKeys.forEach(function(elem) {
+    document.getElementById(elem).addEventListener("click", function() {
+        let audio = new Audio("./key_sounds/white_keys/" + elem + ".mp3");
+        audio.play();
+    });
+});
+let blackKeys = ['W', 'E', 'T', 'Y', 'U'];
+blackKeys.forEach(function(elem) {
+    document.getElementById(elem).addEventListener("click", function() {
+        let audio = new Audio("./key_sounds/black_keys/" + elem + ".mp3");
+        audio.play();
+    })
 });
