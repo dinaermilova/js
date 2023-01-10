@@ -6,7 +6,17 @@ document.querySelectorAll('.delete-btn').forEach(function (elem) {
         ul.removeChild(li);
     })
 })
+document.querySelectorAll('input[type="checkbox"]').forEach(function (elem) {
+    elem.addEventListener('change', function() {
+        let li = this.parentNode;
+        if (this.checked) {
+            li.querySelector('.task').style["text-decoration"] = "line-through";
+        } else {
+            li.querySelector('.task').style["text-decoration"] = "none";
 
+        }
+    });
+})
 document.getElementById("add-task-button").addEventListener("click", function() {
     let userInput = document.getElementById("input-task");
 
@@ -15,6 +25,15 @@ document.getElementById("add-task-button").addEventListener("click", function() 
 
     let newCheckbox = document.createElement('input');
     newCheckbox.setAttribute("type", "checkbox")
+    newCheckbox.addEventListener('change', function() {
+        let li = this.parentNode;
+        if (this.checked) {
+            li.querySelector('.task').style["text-decoration"] = "line-through";
+        } else {
+            li.querySelector('.task').style["text-decoration"] = "none";
+
+        }
+    });
     newTaskLi.appendChild(newCheckbox);
 
     let newTaskSpan = document.createElement('span');
